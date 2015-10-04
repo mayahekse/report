@@ -1,16 +1,146 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1348.17">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-  </style>
-</head>
-<body>
-<p class="p1">hello world</p>
+  <head>
+    <!-- Uses a header that contracts as the page scrolls down. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      .page-layout .mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+        padding-right: 0;
+      }
+      .page-layout .mdl-layout__header {
+        background: url('http://www.getmdl.io/assets/demos/transparent.jpg') center / cover;
+      }
+      .page-layout .mdl-layout__header,
+      .page-layout .mdl-layout__drawer-button {
+        /* This background is dark, so we set text to white. Use 87% black instead if
+           your background is light. */
+        color: white;
+      }
+      .slider-labels {
+        display: flex;
+        width: calc(100% + 4px);
+        margin-left: -2px;
+        margin-right: -2px;
+        text-align: center;
+      }
+      .slider-labels span {
+        flex: 0 1 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--waterfall mdl-layout__header--transparent">
+        <!-- Top row, always visible -->
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Welcome to the Logic of Mayah</span>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+        <!-- Bottom row, not visible on scroll -->
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Please fill out my form</span>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <form action="https://formspree.io/zinkplaat@gmail.com" method="POST" class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col">
+              Did your search confirm the hypothesis?
+            </div>
+            <div class="mdl-cell mdl-cell--1-col"></div>
+            <div class="mdl-cell mdl-cell--1-col">
+              <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                <input type="radio" class="mdl-radio__button" name="hypothesis" value="1" checked />
+                <span class="mdl-radio__label">Yes</span>
+              </label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+              <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                <input type="radio" class="mdl-radio__button" name="hypothesis" value="0" />
+                <span class="mdl-radio__label">No</span>
+              </label>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              You have now experienced my logic and process, would you like to set up a meeting?
+            </div>
+            <div class="mdl-cell mdl-cell--1-col"></div>
+            <div class="mdl-cell mdl-cell--1-col">
+              <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                <input type="radio" class="mdl-radio__button" name="meeting"  value="1" checked />
+                <span class="mdl-radio__label">Yes</span>
+              </label>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+              <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                <input type="radio" id="set-up-meeting-1" class="mdl-radio__button" name="meeting" value="0" />
+                <span class="mdl-radio__label">No</span>
+              </label>
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-cell--middle">When?</div>
+            <div class="mdl-cell mdl-cell--1-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*" id="meeting-day" name="meeting-day"/>
+              <label class="mdl-textfield__label" for="meeting-day">Day</label>
+              <span class="mdl-textfield__error">Please enter 1-31</span>
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*" id="meeting-month" name="meeting-month"/>
+              <label class="mdl-textfield__label" for="meeting-month">Month</label>
+              <span class="mdl-textfield__error">Please enter 1-12</span>
+            </div>
+            <div class="mdl-cell mdl-cell--1-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\:[0-9]+)" id="meeting-time" name="meeting-time"/>
+              <label class="mdl-textfield__label" for="meeting-day">Time</label>
+              <span class="mdl-textfield__error">Please enter a time like 03:00</span>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col"/> </div>
+            <div class="mdl-cell mdl-cell--4-col"> </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              On a scale of one to five, how would you rate the following:
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              My conceptual abilities?
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <input class="mdl-slider mdl-js-slider" name="conceptual" type="range" min="1" max="5" value="3" tabindex="0"/>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col slider-labels">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              My execution abilities?
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <input class="mdl-slider mdl-js-slider" name="execution" type="range" min="1" max="5" value="3" tabindex="0"/>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col slider-labels">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              The value of my experience and achievements?
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              <input class="mdl-slider mdl-js-slider" name="experience-achievements" type="range" min="1" max="5" value="3" tabindex="0"/>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col slider-labels">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+              Any additional comments?
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield">
+              <textarea class="mdl-textfield__input" type="text" rows= "3" id="comments" name="comments"></textarea>
+              <label class="mdl-textfield__label" for="comments">Any additional comments</label>
+            </div>
+            <button type="submit" class="mdl-cell mdl-cell--4-col mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+              Submit
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
 </body>
 </html>
